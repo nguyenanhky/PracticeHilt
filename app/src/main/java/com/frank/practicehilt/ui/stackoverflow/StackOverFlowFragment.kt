@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.frank.practicehilt.databinding.FragmentStackOverFlowBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StackOverFlowFragment : Fragment() {
 
     private val viewModel by viewModels<StackOverFlowViewModel>()
@@ -30,12 +32,11 @@ class StackOverFlowFragment : Fragment() {
         dataBinding.viewModel = viewModel
 
 
-        viewModel.listQuestions.observe(viewLifecycleOwner,{
-            list ->
+        viewModel.listQuestions.observe(viewLifecycleOwner) { list ->
             list.firstOrNull()?.let { question ->
                 dataBinding.tvResult.text = question.toString()
             }
-        })
+        }
 
 
         return dataBinding.root

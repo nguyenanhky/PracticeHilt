@@ -2,21 +2,23 @@ package com.frank.practicehilt.data.services
 
 import com.frank.practicehilt.data.apis.QuestionAPI
 import com.frank.practicehilt.data.entities.QuestionList
+import javax.inject.Inject
 
-class QuestionRemoteService constructor(private val questionAPI: QuestionAPI) {
+class QuestionRemoteService @Inject constructor(
+    private val questionAPI: QuestionAPI,
+) {
 
-    suspend fun getListQuestion(currentPage: Int, pageSize: Int): QuestionList?{
+    suspend fun getListQuestion(currentPage: Int, pageSize: Int): QuestionList? {
 
-        val parameters = mutableMapOf<String,String>()
+        val parameters = mutableMapOf<String, String>()
         parameters["site"] = "stackoverflow"
         parameters["pagesize"] = "$pageSize"
         parameters["page"] = "$currentPage"
-        val response =  questionAPI.getListQuestions(parameters = parameters)
+        val response = questionAPI.getListQuestions(parameters = parameters)
 
-        if(response.isSuccessful){
+        if (response.isSuccessful) {
             return response.body()
-        }
-        else{
+        } else {
 
             throw Exception(response.message())
         }
