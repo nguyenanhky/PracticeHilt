@@ -1,6 +1,6 @@
 package com.frank.practicehilt.data.apis
 
-import com.frank.practicehilt.data.entities.Post
+import com.frank.practicehilt.data.database.post.Post
 import retrofit2.Response
 import retrofit2.http.GET
 

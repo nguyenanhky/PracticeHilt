@@ -1,4 +1,4 @@
-package com.frank.practicehilt.data.database.question
+package com.frank.practicehilt.data.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

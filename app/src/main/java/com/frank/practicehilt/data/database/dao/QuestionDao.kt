@@ -1,9 +1,9 @@
-package com.frank.practicehilt.data.database.question
+package com.frank.practicehilt.data.database.dao
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import com.frank.practicehilt.data.entities.QuestionEntity
 
 @Dao
 interface QuestionDao {

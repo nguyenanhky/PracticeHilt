@@ -3,7 +3,7 @@ package com.frank.practicehilt.di
 import android.content.Context
 import androidx.room.Room
 import com.frank.practicehilt.data.database.AppDB
-import com.frank.practicehilt.data.database.question.QuestionDao
+import com.frank.practicehilt.data.database.dao.QuestionDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +22,7 @@ object DatabaseModule {
     }
 
     @Provides
-    fun provideQuestionDao(appDB: AppDB):QuestionDao{
+    fun provideQuestionDao(appDB: AppDB): QuestionDao {
         return appDB.questionDao()
     }
 

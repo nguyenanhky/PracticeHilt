@@ -1,4 +1,4 @@
-package com.frank.practicehilt.data.entities
+package com.frank.practicehilt.data.database.question
 
 import com.squareup.moshi.Json
 

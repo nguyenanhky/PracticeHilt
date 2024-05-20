@@ -1,7 +1,7 @@
 package com.frank.practicehilt.data.services
 
 import com.frank.practicehilt.data.apis.QuestionAPI
-import com.frank.practicehilt.data.entities.QuestionList
+import com.frank.practicehilt.data.database.question.QuestionList
 import javax.inject.Inject
 
 class QuestionRemoteService @Inject constructor(

@@ -1,4 +1,4 @@
-package com.frank.practicehilt.data.entities
+package com.frank.practicehilt.data.database.post
 
 data class Post(
     val userId: Int? = 0,

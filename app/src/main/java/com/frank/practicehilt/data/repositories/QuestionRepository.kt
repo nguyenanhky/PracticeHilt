@@ -1,6 +1,6 @@
 package com.frank.practicehilt.data.repositories
 
-import com.frank.practicehilt.data.entities.Question
+import com.frank.practicehilt.data.database.question.Question
 import com.frank.practicehilt.data.entities.toListQuestion
 import com.frank.practicehilt.data.entities.toQuestionEntity
 import com.frank.practicehilt.data.services.QuestionLocalService

@@ -1,7 +1,7 @@
 package com.frank.practicehilt.data.services
 
-import com.frank.practicehilt.data.database.question.QuestionDao
-import com.frank.practicehilt.data.database.question.QuestionEntity
+import com.frank.practicehilt.data.database.dao.QuestionDao
+import com.frank.practicehilt.data.entities.QuestionEntity
 import javax.inject.Inject
 
 class QuestionLocalService @Inject constructor(

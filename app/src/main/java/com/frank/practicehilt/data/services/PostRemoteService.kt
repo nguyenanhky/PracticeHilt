@@ -1,7 +1,7 @@
 package com.frank.practicehilt.data.services
 
 import com.frank.practicehilt.data.apis.PostAPI
-import com.frank.practicehilt.data.entities.Post
+import com.frank.practicehilt.data.database.post.Post
 
 class PostRemoteService constructor(private  val postAPI: PostAPI) {
 

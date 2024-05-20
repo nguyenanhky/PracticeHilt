@@ -3,7 +3,7 @@ package com.frank.practicehilt.ui.stackoverflow
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.frank.practicehilt.base.BaseViewModel
-import com.frank.practicehilt.data.entities.Question
+import com.frank.practicehilt.data.database.question.Question
 import com.frank.practicehilt.data.repositories.QuestionRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

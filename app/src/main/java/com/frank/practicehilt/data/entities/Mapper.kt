@@ -1,6 +1,6 @@
 package com.frank.practicehilt.data.entities
 
-import com.frank.practicehilt.data.database.question.QuestionEntity
+import com.frank.practicehilt.data.database.question.Question
 
 
 /**
