@@ -1,6 +1,7 @@
 package com.frank.practicehilt.di
 
 import com.frank.practicehilt.common.Config
+import com.frank.practicehilt.data.apis.PostAPI
 import com.frank.practicehilt.data.apis.QuestionAPI
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -12,6 +13,8 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.create
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -45,6 +48,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
+    @Named("StackOverFlowSite")
     fun provideRetrofitStackOverFlow(
         okHttpClient: OkHttpClient,
         moshiConverterFactory: MoshiConverterFactory,
@@ -56,7 +60,25 @@ object NetworkModule {
     }
 
     @Provides
-    fun provideQuestionAPI(retrofit: Retrofit): QuestionAPI{
+    fun provideQuestionAPI(@Named("StackOverFlowSite") retrofit: Retrofit): QuestionAPI {
         return retrofit.create(QuestionAPI::class.java)
+    }
+
+    @Provides
+    @Singleton
+    @Named("JsonPlaceHolderSite")
+    fun provideJsonPlaceHolderSite(
+        okHttpClient: OkHttpClient,
+        moshiConverterFactory: MoshiConverterFactory,
+    ): Retrofit {
+        return Retrofit.Builder().addConverterFactory(moshiConverterFactory)
+            .baseUrl(Config.JsonPlaceHolder)
+            .client(okHttpClient)
+            .build()
+    }
+
+    @Provides
+    fun providePostsApi(@Named("JsonPlaceHolderSite") retrofit: Retrofit): PostAPI {
+        return retrofit.create(PostAPI::class.java)
     }
 }
