@@ -35,4 +35,7 @@ class QuestionRepository @Inject constructor(
         return newListQuestion
     }
 
+    suspend fun refresh(): List<Question> = withContext(dispatcher) {
+        getNewAndSave()
+    }
 }

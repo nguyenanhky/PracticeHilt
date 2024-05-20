@@ -30,7 +30,14 @@ class StackOverFlowViewModel @Inject constructor(
 
 
     fun refresh() {
-
+        parentJob = viewModelScope.launch(exceptionHandler){
+            isLoading.postValue(true)
+            val question = questionRepository.refresh()
+            question?.let {
+                listQuestions.postValue(question)
+            }
+        }
+        registerEventParentJobFinish()
     }
 
 }
